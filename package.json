@@ -1,0 +1,12 @@
+{
+  "name": "projet",
+  "version": "0.1.0",
+  "description": "Proje Bot Discord",
+  "main": "main.js",
+  "repository": "https://github.com/Hookcas/discordjsbot.git",
+  "author": "Alexis <alexis.wenner2@orange.fr>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "discordjs/discord.js"
+  }
+}
