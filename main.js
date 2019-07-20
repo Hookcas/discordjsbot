@@ -1,4 +1,4 @@
-const { Client } = require("discord.js");
+const { Client, MessageEmbed } = require("discord.js");
 const { TOKEN, PREFIX } = require("./config");
 const client = new Client({disableEveryone: true });
 
@@ -25,6 +25,16 @@ client.on("message", msg => {
       channel.send(`J'ai ajouté le rôle ${role} à ${msg.author}.`);
       msg.delete({ timeout: 3000 });
     }
+  }
+  if (cmd === "sinfo") {
+    const embed = new MessageEmbed()
+      .setDescription(msg.guild.name)
+      .setThumbnail(msg.guild.iconURL())
+      .addField("Membres", msg.guild.memberCount, true)
+      .addField("Owner", msg.guild.owner.user.tag, true)
+      .setImage(msg.guild.owner.user.avatarURL())
+      .setTimestamp();
+    msg.channel.send(embed);
   }
 });
 
